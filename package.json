@@ -2,23 +2,6 @@
   "name": "react-library",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "@types/jest": "^27.5.2",
-    "@types/node": "^16.18.3",
-    "@types/react": "^18.0.24",
-    "@types/react-dom": "^18.0.8",
-    "babel-eslint": "^10.1.0",
-    "clsx": "^1.2.1",
-    "eslint": "^8.27.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1",
-    "typescript": "^4.8.4",
-    "web-vitals": "^2.1.4"
-  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -26,37 +9,20 @@
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
-    "lint": "eslint -c .eslintrc.json --ext .js,.jsx,.ts,.tsx ./src/components",
-    "lint:fix": "npm run lint -- --fix",
-    "format": "prettier --write ./src/components/**/*"
+    "lint": "eslint src/**/*.{ts,tsx}",
+    "lint:fix": "eslint --fix 'src/**/*.{ts,tsx}'",
+    "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ],
-    "overrides": [
-      {
-        "files": [
-          "**/*.stories.*"
-        ],
-        "rules": {
-          "import/no-anonymous-default-export": "off"
-        }
-      }
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "clsx": "^1.2.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "sass": "^1.56.0",
+    "web-vitals": "^2.1.4"
   },
   "devDependencies": {
     "@storybook/addon-actions": "6.5.13",
@@ -69,18 +35,38 @@
     "@storybook/preset-create-react-app": "4.1.2",
     "@storybook/react": "6.5.13",
     "@storybook/testing-library": "0.0.13",
-    "babel-plugin-named-exports-order": "0.0.2",
-    "eslint-config-prettier": "8.5.0",
-    "eslint-plugin-prettier": "4.2.1",
-    "prettier": "2.7.1",
-    "prop-types": "15.8.1",
-    "webpack": "5.74.0",
-    "babel-eslint": "10.1.0",
-    "eslint": "7.22.0",
-    "eslint-config-airbnb": "18.2.1",
-    "eslint-plugin-import": "2.22.1",
-    "eslint-plugin-jsx-a11y": "6.4.1",
-    "eslint-plugin-react": "7.22.0",
-    "eslint-plugin-react-hooks": "4.2.0"
+    "@types/jest": "^27.5.2",
+    "@types/node": "^16.18.3",
+    "@types/react": "^18.0.24",
+    "@types/react-dom": "^18.0.8",
+    "@typescript-eslint/eslint-plugin": "^5.42.1",
+    "@typescript-eslint/parser": "^5.42.1",
+    "eslint": "^8.27.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-standard-with-typescript": "^23.0.0",
+    "eslint-import-resolver-typescript": "^3.5.2",
+    "eslint-plugin-destructuring-newline": "^0.1.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-react": "^7.31.10",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "prettier": "^2.7.1",
+    "typescript": "^4.8.4",
+    "webpack": "5.74.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

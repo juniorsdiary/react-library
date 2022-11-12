@@ -1,223 +1,61 @@
 {
-  "env": {
-    "browser": true, // Browser global variables like `window` etc.
-    "commonjs": true, // CommonJS global variables and CommonJS scoping.Allows require, exports and module.
-    "es6": true, // Enable all ECMAScript 6 features except for modules.
-    "jest": true, // Jest global variables like `it` etc.
-    "node": true // Defines things like process.env when generating through node
-  },
-  "extends": [
-    "eslint:recommended",
-    "plugin:react/recommended",
-    "plugin:jsx-a11y/recommended",
-    "plugin:react-hooks/recommended",
-    "plugin:jest/recommended",
-    "plugin:testing-library/react",
-    "airbnb",
-    "plugin:prettier/recommended"
-  ],
-  "parser": "babel-eslint", // Uses babel-eslint transforms.
-  "parserOptions": {
-    "ecmaFeatures": {
-      "jsx": true
+    "env": {
+        "browser": true,
+        "es2021": true,
+        "jest": true
     },
-    "ecmaVersion": 2018, // Allows for the parsing of modern ECMAScript features
-    "sourceType": "module" // Allows for the use of imports
-  },
-  "plugins": [
-    "import", // eslint-plugin-import plugin. https://www.npmjs.com/package/eslint-plugin-import
-    "react",
-    "react-hooks",
-    "prettier"
-  ],
-  "root": true, // For configuration cascading.
-  "rules": {
-    "comma-dangle": [
-      "warn",
-      "never"
+    "extends": [
+        "eslint:recommended",
+        "airbnb",
+        "plugin:react/recommended",
+        "plugin:react/jsx-runtime",
+        "plugin:@typescript-eslint/recommended",
+        "prettier"
     ],
-    "eol-last": "error",
-    "import/order": [
-      "warn",
-      {
-        "alphabetize": {
-          "caseInsensitive": true,
-          "order": "asc"
-        },
-        "groups": [
-          "builtin",
-          "external",
-          "index",
-          "sibling",
-          "parent",
-          "internal"
-        ]
-      }
-    ],
-    "indent": [
-      "error",
-      4
-    ],
-    "jsx-quotes": [
-      "warn",
-      "prefer-double"
-    ],
-    "max-len": [
-      "warn",
-      {
-        "ignoreComments": true,
-        "ignoreUrls": true,
-        "ignoreStrings": true,
-        "ignoreTemplateLiterals": true,
-        "ignoreRegExpLiterals": true,
-        "tabWidth": 4,
-        "code": 120
-      }
-    ],
-    "no-console": "warn",
-    "no-duplicate-imports": "warn",
-    "no-restricted-imports": [
-      "error",
-      {
-        "paths": [],
-        "patterns": []
-      }
-    ],
-    "no-unused-vars": "warn",
-    "object-curly-spacing": [
-      "warn",
-      "always"
-    ],
-    "quotes": [
-      "warn",
-      "double"
-    ],
-    "react/jsx-curly-spacing": "off",
-    "react/jsx-filename-extension": [
-      "error",
-      {
-        "extensions": [
-          ".js",
-          ".jsx",
-          ".ts",
-          ".tsx"
-        ]
-      }
-    ],
-    "react/jsx-indent": [
-      "error",
-      4,
-      {
-        "checkAttributes": true,
-        "indentLogicalExpressions": true
-      }
-    ],
-    "react/jsx-indent-props": [
-      "error",
-      4
-    ],
-    "semi": "warn",
-    "sort-imports": [
-      "warn",
-      {
-        "ignoreCase": false,
-        "ignoreDeclarationSort": true,
-        "ignoreMemberSort": false
-      }
-    ],
-    "sort-keys": [
-      "warn",
-      "asc",
-      {
-        "caseSensitive": true,
-        "minKeys": 2,
-        "natural": false
-      }
-    ],
-    "prettier/prettier": [
-      "error",
-      {
-        "endOfLine": "auto"
-      },
-      {
-        "usePrettierrc": true
-      }
-    ],
-    "import/no-dynamic-require":"off",
-    "global-require": "off",
-    "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn",
-    "no-use-before-define": "off",
-    "react/react-in-jsx-scope": "off",
-    "import/no-cycle": "off",
-    "react/prop-types": "off",
-    "import/no-named-as-default": "off",
-    "import/no-named-as-default-member": "off",
-    "react/jsx-props-no-spreading": "off",
-    "no-param-reassign": "off",
-    "radix": "off",
-    "no-plusplus": "off",
-    "no-underscore-dangle": "off",
-    "no-unused-expressions": "off",
-    "array-callback-return": "warn",
-    "react/jsx-no-bind": "off",
-    "class-methods-use-this": "off",
-    "consistent-return": "off",
-    "new-cap": "off",
-    "react/destructuring-assignment": "off",
-    "react/forbid-prop-types": "off",
-    "import/prefer-default-export": "off",
-    "react/no-unused-state": "warn",
-    "no-nested-ternary": "off",
-    "jsx-a11y/click-events-have-key-events": "off",
-    "jsx-a11y/no-static-element-interactions": "off",
-    "react/sort-comp": "off",
-    "jsx-a11y/anchor-is-valid": "off",
-    "no-return-assign": "warn",
-    "react/no-array-index-key": "warn",
-    "guard-for-in": "warn",
-    "no-restricted-syntax": "warn",
-    "max-classes-per-file": "off",
-    "react/state-in-constructor": "off",
-    "react/static-property-placement": "off",
-    "react/prefer-stateless-function": "off",
-    "react/no-did-update-set-state": "warn",
-    "camelcase": "off",
-    "prefer-destructuring": "warn",
-    "no-await-in-loop": "warn",
-    "no-restricted-globals": "off",
-    "no-bitwise": "off",
-    "eqeqeq": "warn",
-    "no-shadow": "warn",
-    "jsx-a11y/label-has-associated-control": "off",
-    "react/button-has-type": "off"
-  },
-  "settings": {
-    "react": {
-      "version": "detect" // Detect react version
-    }
-  },
-  "overrides": [
-    {
-      "files": [ "**/*.ts?(x)" ],
-      "parser": "@typescript-eslint/parser",
-      "parserOptions": {
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
         "ecmaFeatures": {
-          "jsx": true
+            "jsx": true
         },
-        "ecmaVersion": 2018,
+        "ecmaVersion": "latest",
         "sourceType": "module"
-      },
-      "plugins": [
-        "@typescript-eslint"
-      ],
-      // You can add Typescript specific rules here.
-      // If you are adding the typescript variant of a rule which is there in the javascript
-      // ruleset, disable the JS one.
-      "rules": {
-        "@typescript-eslint/no-array-constructor": "warn",
-        "no-array-constructor": "off"
-      }
+    },
+    "plugins": [
+        "react",
+        "react-hooks",
+        "@typescript-eslint",
+        "prettier",
+        "destructuring-newline"
+    ],
+    "ignorePatterns": ["./src/stories/**/*"],
+    "rules": {
+        "indent": ["error", "tab"],
+        "object-curly-newline": ["error", {
+            "ObjectExpression": "always",
+            "ObjectPattern": "always",
+            "ImportDeclaration": { "multiline": true, "minProperties": 1 },
+            "ExportDeclaration": { "multiline": true, "minProperties": 1 }
+        }],
+        "destructuring-newline/object-property-newline": 2,
+        "import/extensions": "off",
+        "react/prop-types": "off",
+        "react/button-has-type": "off",
+        "react/jsx-filename-extension": "off",
+        "import/prefer-default-export": "off",
+        "react/jsx-max-props-per-line": [2, { "maximum": { "single": 1, "multi": 1 } }],
+        "react/jsx-first-prop-new-line": [2, "multiline"],
+        "react/jsx-indent-props": [2, "tab"],
+        "react/jsx-closing-bracket-location": [
+            2,
+            "tag-aligned"
+        ]
+    },
+    "settings": {
+        "import/resolver": {
+            "typescript": {}
+        },
+        "react": {
+            "version": "detect"
+        }
     }
-  ]
 }

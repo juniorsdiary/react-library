@@ -1,7 +1,9 @@
-import clsx from "clsx";
-import React, { ForwardedRef, forwardRef, memo } from "react";
+import clsx from 'clsx';
+import {
+	ComponentProps, ForwardedRef, forwardRef, memo 
+} from 'react';
 
-import styles from "./Button.module.scss";
+import styles from './Button.module.scss';
 
 // autofocus - autofocus - Specifies that a button should automatically get focus when the page loads
 // disabled	- disabled - Specifies that a button should be disabled
@@ -15,18 +17,31 @@ import styles from "./Button.module.scss";
 // type - button reset submit - Specifies the type of button
 // value - text - Specifies an initial value for the button
 
-interface ButtonProps extends React.ComponentProps<"button"> {}
+type ButtonProps = ComponentProps<'button'> & { label: string };
 
-const Component = (props: ButtonProps, ref: ForwardedRef<HTMLButtonElement>) => {
-    const { type = "button", disabled } = props;
+function Component(props: ButtonProps, ref: ForwardedRef<HTMLButtonElement>) {
+	const {
+		type = 'button', 
+		disabled, 
+		label, 
+		onClick 
+	} = props;
 
-    const buttonClassNames = clsx(styles.base, { [styles.disabled]: disabled });
+	const buttonClassNames = clsx(styles.base, {
+		[styles.disabled]: disabled,
+	});
 
-    return (
-        <button className={buttonClassNames} disabled={disabled} ref={ref} type={type}>
-            button
-        </button>
-    );
-};
+	return (
+		<button
+			onClick={onClick}
+			className={buttonClassNames}
+			disabled={disabled}
+			ref={ref}
+			type={type || 'button'}
+		>
+			{label}
+		</button>
+	);
+}
 
 export const Button = memo(forwardRef(Component));
